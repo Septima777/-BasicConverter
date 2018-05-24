@@ -1,0 +1,156 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=4224, tid=0x0000000000001374
+#
+# JRE version:  (8.0_152-b02) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.152-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000004ca3800):  JavaThread "Unknown thread" [_thread_in_vm, id=4980, stack(0x00000000033e0000,0x00000000034e0000)]
+
+Stack: [0x00000000033e0000,0x00000000034e0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000004ca3800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4980, stack(0x00000000033e0000,0x00000000034e0000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 38400K, used 665K [0x00000000d5e00000, 0x00000000d8880000, 0x0000000100000000)
+  eden space 33280K, 2% used [0x00000000d5e00000,0x00000000d5ea6670,0x00000000d7e80000)
+  from space 5120K, 0% used [0x00000000d8380000,0x00000000d8380000,0x00000000d8880000)
+  to   space 5120K, 0% used [0x00000000d7e80000,0x00000000d7e80000,0x00000000d8380000)
+ ParOldGen       total 87552K, used 0K [0x0000000081a00000, 0x0000000086f80000, 0x00000000d5e00000)
+  object space 87552K, 0% used [0x0000000081a00000,0x0000000081a00000,0x0000000086f80000)
+ Metaspace       used 772K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 73K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000014200000,0x0000000014600000] byte_map_base: 0x0000000013df3000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000621f4970
+ Begin Bits: [0x0000000014cb0000, 0x0000000016c48000)
+ End Bits:   [0x0000000016c48000, 0x0000000018be0000)
+
+Polling page: 0x00000000031e0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000004e40000, 0x00000000050b0000, 0x0000000013e40000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.028 loading class java/lang/Short
+Event: 0.028 loading class java/lang/Short done
+Event: 0.028 loading class java/lang/Integer
+Event: 0.028 loading class java/lang/Integer done
+Event: 0.028 loading class java/lang/Long
+Event: 0.028 loading class java/lang/Long done
+Event: 0.029 loading class java/lang/NullPointerException
+Event: 0.029 loading class java/lang/NullPointerException done
+Event: 0.029 loading class java/lang/ArithmeticException
+Event: 0.029 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff7106d0000 - 0x00007ff710701000 	C:\Program Files\Android\Android Studio\jre\jre\bin\java.exe
+0x00007ffda6a80000 - 0x00007ffda6c60000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd97860000 - 0x00007ffd97894000 	C:\Program Files\AVAST Software\Avast\x64\aswhooka.dll
+0x00007ffda4410000 - 0x00007ffda44be000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffda30a0000 - 0x00007ffda3306000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffda4920000 - 0x00007ffda49c1000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffda4bb0000 - 0x00007ffda4c4d000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffda4d60000 - 0x00007ffda4dbb000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffda6340000 - 0x00007ffda645f000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffda6850000 - 0x00007ffda69df000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffda34c0000 - 0x00007ffda34e0000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffda4dc0000 - 0x00007ffda4de8000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffda2e80000 - 0x00007ffda3013000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffda34e0000 - 0x00007ffda357b000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffda3370000 - 0x00007ffda3466000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd96620000 - 0x00007ffd96889000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.16299.431_none_15c7d3ee93659e73\COMCTL32.dll
+0x00007ffda3f50000 - 0x00007ffda4258000 	C:\WINDOWS\System32\combase.dll
+0x00007ffda3020000 - 0x00007ffda3092000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffda4270000 - 0x00007ffda429d000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000061950000 - 0x0000000061a22000 	C:\Program Files\Android\Android Studio\jre\jre\bin\msvcr100.dll
+0x0000000061a30000 - 0x000000006226f000 	C:\Program Files\Android\Android Studio\jre\jre\bin\server\jvm.dll
+0x00007ffda4260000 - 0x00007ffda4268000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffda1950000 - 0x00007ffda1959000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffda4b40000 - 0x00007ffda4bac000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffda0430000 - 0x00007ffda0453000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd98450000 - 0x00007ffd9845a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffda03d0000 - 0x00007ffda03fa000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffda3470000 - 0x00007ffda34ba000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ffda02c0000 - 0x00007ffda02cf000 	C:\Program Files\Android\Android Studio\jre\jre\bin\verify.dll
+0x00007ffd89520000 - 0x00007ffd89549000 	C:\Program Files\Android\Android Studio\jre\jre\bin\java.dll
+0x00007ffd99e60000 - 0x00007ffd99e76000 	C:\Program Files\Android\Android Studio\jre\jre\bin\zip.dll
+
+VM Arguments:
+java_command: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler -Xadd-compiler-builtins -Xbuild-file=C:\Users\Septima\AppData\Local\Temp\kjps6195716658643493314app_debug.script.xml -classpath C:\Users\Septima\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.20\1ba23e74292b5af8980efde762fdd44fb61ddc2\kotlin-stdlib-jre7-1.2.20.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\034671ec24942821c116bdb801bb9ba2\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\4bb1052304c8dee7f1866c8efc11fb04\jars\classes.jar;C:\Users\Septima\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.20\1ce9e25c74aade0aa039cce459f2906a8c8ffc8e\kotlin-stdlib-1.2.20.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\2ba48232cbf50402ea8e83b74121f95b\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ffc68cbe628c75fb32867a89b465c3ed\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\ec4f4b7aa1975b55c00481fd40509e49\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\30099d1d50b3e60d76cab9a49e8cd148\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9f020912b9ac0c96489afa04bede0475\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1e7dc446f0cb68d3fce7bda4d4b02fca\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\186da5a409093ddef4c1de376b2da253\jars\classes.jar;C:\Users\Septima\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c5a7e6e4e63cecd54ac6057bd7fce03a\jars\classes.jar;C:\Users\Septima\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support
+java_class_path (initial): C:\Users\Septima\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-compiler-embeddable\1.2.20\27671864206ef5bd946972619ed4ac4ae1397b2\kotlin-compiler-embeddable-1.2.20.jar;C:\Users\Septima\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.20\1ce9e25c74aade0aa039cce459f2906a8c8ffc8e\kotlin-stdlib-1.2.20.jar;C:\Users\Septima\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-script-runtime\1.2.20\5aace4d747ac901b2235cd5bd9970b87508389a0\kotlin-script-runtime-1.2.20.jar;C:\Users\Septima\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-reflect\1.2.20\f6f78911d9abbc803697a9030962258d9bda49b3\kotlin-reflect-1.2.20.jar;C:\Program Files\Android\Android Studio\jre\lib\tools.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\MinGW\bin;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\PrivateAssemblies\;C:\Users\Septima\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Septima\AppData\Local\Programs\Python\Python36-32\;C:\Users\Septima\AppData\Local\Microsoft\WindowsApps;C:\Users\Septima\AppData\Local\atom\bin;C:\Users\Septima\AppData\Local\NASM;C:\Users\Septima\Anaconda2
+USERNAME=Septima
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 16299 (10.0.16299.431)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8279168k(1021644k free), swap 8279168k(6120k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.152-b02) for windows-amd64 JRE (1.8.0_152-release-1024-b02), built by "builder" with MS VC++ 10.0 (VS2010)
+
+time: Wed May 23 22:29:34 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
