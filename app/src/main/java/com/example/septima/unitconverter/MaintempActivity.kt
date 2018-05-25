@@ -9,16 +9,22 @@ import android.widget.*
 class MaintempActivity : AppCompatActivity() {
 
     @SuppressLint("WrongViewCast")
-    var fromTemp : EditText = findViewById(R.id.fromTemp)
-    var toTemp : EditText = findViewById(R.id.toTemp)
-    var spinFromBox : Spinner = findViewById(R.id.fromBox)
-    var spinToBox : Spinner = findViewById(R.id.toBox)
-    var spinnerArray = arrayOf("Celsius", "Fahrenheit", "Kelvin")
-    var tempValue = 0
+    lateinit var fromTemp : EditText
+    lateinit var toTemp : EditText
+    lateinit var spinFromBox : Spinner
+    lateinit var spinToBox : Spinner
+    lateinit var spinnerArray : Array<String>
+    var tempValue : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maintemp)
+        fromTemp = findViewById(R.id.fromTemp)
+        toTemp = findViewById(R.id.toTemp)
+        spinFromBox = findViewById(R.id.fromBox)
+        spinToBox = findViewById(R.id.toBox)
+        spinnerArray = arrayOf("Celsius", "Fahrenheit", "Kelvin")
+        tempValue = 0
         fromTempType()
         toTempType()
     }
@@ -32,7 +38,7 @@ class MaintempActivity : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-                Toast.makeText(this@MaintempActivity,spinFromBox.selectedItem.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MaintempActivity,spinFromBox.selectedItem.toString() + " selected", Toast.LENGTH_LONG).show()
             }
 
         }
@@ -47,7 +53,7 @@ class MaintempActivity : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-                Toast.makeText(this@MaintempActivity,spinToBox.selectedItem.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MaintempActivity,spinToBox.selectedItem.toString() + " selected", Toast.LENGTH_LONG).show()
             }
 
         }
@@ -59,39 +65,39 @@ class MaintempActivity : AppCompatActivity() {
                 var editTemp = fromTemp.getText().toString()
                 var fromTempValue = Integer.parseInt(editTemp)
                 tempValue = fromTempValue*(9/5)+32.toInt()
-                toTemp.setText(tempValue)
+                toTemp.setText(tempValue.toString())
 
             }else if (spinToBox.selectedItem.toString().equals("Kelvin")){
                 var editTemp = fromTemp.getText().toString()
                 var fromTempValue = Integer.parseInt(editTemp)
                 tempValue = (fromTempValue + 273.15).toInt()
-                toTemp.setText(tempValue)
+                toTemp.setText(tempValue.toString())
             }
         }else if(spinFromBox.selectedItem.toString().equals("Fahrenheit")){
             if(spinToBox.selectedItem.toString().equals("Celsius")){
                 var editTemp = fromTemp.getText().toString()
                 var fromTempValue = Integer.parseInt(editTemp)
                 tempValue = ((fromTempValue-32)/1.8).toInt()
-                toTemp.setText(tempValue)
+                toTemp.setText(tempValue.toString())
 
             }else if (spinToBox.selectedItem.toString().equals("Kelvin")){
                 var editTemp = fromTemp.getText().toString()
                 var fromTempValue = Integer.parseInt(editTemp)
                 tempValue = ((fromTempValue + 459.67)*(5/9)).toInt()
-                toTemp.setText(tempValue)
+                toTemp.setText(tempValue.toString())
             }
         }else if(spinFromBox.selectedItem.toString().equals("Kelvin")){
             if(spinToBox.selectedItem.toString().equals("Celsius")){
                 var editTemp = fromTemp.getText().toString()
                 var fromTempValue = Integer.parseInt(editTemp)
                 tempValue = (fromTempValue-273.15).toInt()
-                toTemp.setText(tempValue)
+                toTemp.setText(tempValue.toString())
 
             }else if (spinToBox.selectedItem.toString().equals("Fahrenheit")){
                 var editTemp = fromTemp.getText().toString()
                 var fromTempValue = Integer.parseInt(editTemp)
                 tempValue = (fromTempValue*(9/5)-459.67).toInt()
-                toTemp.setText(tempValue)
+                toTemp.setText(tempValue.toString())
             }
         }
     }

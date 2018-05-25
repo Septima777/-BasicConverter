@@ -9,16 +9,22 @@ import android.widget.*
 class MaintimeActivity : AppCompatActivity() {
 
     @SuppressLint("WrongViewCast")
-    var fromTime : EditText = findViewById(R.id.fromTime)
-    var toTime : EditText = findViewById(R.id.toTime)
-    var spinFromBox : Spinner = findViewById(R.id.fromBox)
-    var spinToBox :  Spinner = findViewById(R.id.toBox)
-    var spinnerArray = arrayOf("Seconds", "Minutes", "Hours")
-    var value = 0
+    lateinit var fromTime : EditText
+    lateinit var toTime : EditText
+    lateinit var spinFromBox : Spinner
+    lateinit var spinToBox : Spinner
+    lateinit var spinnerArray : Array<String>
+    var value : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maintime)
+        fromTime = findViewById(R.id.fromTime)
+        toTime = findViewById(R.id.toTime)
+        spinFromBox = findViewById(R.id.fromBox)
+        spinToBox = findViewById(R.id.toBox)
+        spinnerArray = arrayOf("Seconds", "Minutes", "Hours")
+        value = 0
         fromTimeType()
         toTimeType()
     }
@@ -33,7 +39,7 @@ class MaintimeActivity : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-                Toast.makeText(this@MaintimeActivity,spinFromBox.selectedItem.toString(),Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MaintimeActivity,spinFromBox.selectedItem.toString() + " selected",Toast.LENGTH_LONG).show()
             }
 
         }
@@ -49,7 +55,7 @@ class MaintimeActivity : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-                Toast.makeText(this@MaintimeActivity,spinToBox.selectedItem.toString(),Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MaintimeActivity,spinToBox.selectedItem.toString() + " selected",Toast.LENGTH_LONG).show()
             }
 
         }
@@ -62,39 +68,39 @@ class MaintimeActivity : AppCompatActivity() {
                 var editTime = fromTime.getText().toString()
                 var fromTimeValue = Integer.parseInt(editTime)
                 value = fromTimeValue/60
-                toTime.setText(value)
+                toTime.setText(value.toString())
 
             }else if (spinToBox.selectedItem.toString().equals("Hours")){
                 var editTime = fromTime.getText().toString()
                 var fromTimeValue = Integer.parseInt(editTime)
                 value = fromTimeValue/3600
-                toTime.setText(value)
+                toTime.setText(value.toString())
             }
         }else if(spinFromBox.selectedItem.toString().equals("Minutes")){
             if(spinToBox.selectedItem.toString().equals("Seconds")){
                 var editTime = fromTime.getText().toString()
                 var fromTimeValue = Integer.parseInt(editTime)
                 value = fromTimeValue*60
-                toTime.setText(value)
+                toTime.setText(value.toString())
 
             }else if (spinToBox.selectedItem.toString().equals("Hours")){
                 var editTime = fromTime.getText().toString()
                 var fromTimeValue = Integer.parseInt(editTime)
                 value = fromTimeValue/60
-                toTime.setText(value)
+                toTime.setText(value.toString())
             }
         }else if(spinFromBox.selectedItem.toString().equals("Hours")){
             if(spinToBox.selectedItem.toString().equals("Minutes")){
                 var editTime = fromTime.getText().toString()
                 var fromTimeValue = Integer.parseInt(editTime)
                 value = fromTimeValue*60
-                toTime.setText(value)
+                toTime.setText(value.toString())
 
             }else if (spinToBox.selectedItem.toString().equals("Seconds")){
                 var editTime = fromTime.getText().toString()
                 var fromTimeValue = Integer.parseInt(editTime)
                 value = fromTimeValue*3600
-                toTime.setText(value)
+                toTime.setText(value.toString())
             }
         }
     }
